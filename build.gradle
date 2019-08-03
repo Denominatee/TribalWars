@@ -21,3 +21,7 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.14.0'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.14.0'
 }
+
+if (project.hasProperty('gradle.profile')) {
+    println "Target environment: $gradle.profile"
+}
