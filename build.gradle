@@ -22,11 +22,8 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.14.0'
 }
 
-def propertyDrivenProfiles;
-bootWar {
-    systemProperties = [
-            'spring.profiles.active': propertyDrivenProfiles
-    ]
+war {
+    archiveName 'tribal_wars.war'
 }
 
 if (project.hasProperty('dev')) {
@@ -36,4 +33,13 @@ if (project.hasProperty('dev')) {
 } else {
     project.logger.lifecycle('!!!!!!!!!!!!!!!!!!!defaultlt')
     propertyDrivenProfiles = 'default'
+}
+
+def propertyDrivenProfiles;
+bootWar {
+    project.logger.lifecycle('botwar!!!!!!!!!!!!!!')
+    propertyDrivenProfiles
+   /* systemProperties = [
+            'spring.profiles.active': propertyDrivenProfiles
+    ]*/
 }
