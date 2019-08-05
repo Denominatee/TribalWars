@@ -28,18 +28,17 @@ war {
 
 String propertyDrivenProfiles
 if (project.hasProperty('dev')) {
-    // Used for dev environment
-    project.logger.lifecycle('!!!!!!!!!!!!!!!!!!!dev')
     propertyDrivenProfiles = 'dev'
 } else {
-    project.logger.lifecycle('!!!!!!!!!!!!!!!!!!!defaultlt')
     propertyDrivenProfiles = 'default'
 }
 
+task setSpringProfile() {
+    ant.propertyfile(file: "./build/resources/main/application.properties") {
+        entry(key: "spring.profiles.active", value: "dev")
+    }
+}
+
 bootWar {
-    project.logger.lifecycle('botwar!!!!!!!!!!!!!! ')
-    println "${propertyDrivenProfiles}"
-   /* systemProperties = [
-            'spring.profiles.active': propertyDrivenProfiles
-    ]*/
+    dependsOn setSpringProfile
 }
