@@ -31,7 +31,9 @@ bootWar {
 
 if (project.hasProperty('dev')) {
     // Used for dev environment
+    project.logger.lifecycle('!!!!!!!!!!!!!!!!!!!dev')
     propertyDrivenProfiles = 'dev'
 } else {
+    project.logger.lifecycle('!!!!!!!!!!!!!!!!!!!defaultlt')
     propertyDrivenProfiles = 'default'
 }
