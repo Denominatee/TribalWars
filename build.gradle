@@ -26,6 +26,7 @@ war {
     archiveName 'tribal_wars.war'
 }
 
+def propertyDrivenProfiles;
 if (project.hasProperty('dev')) {
     // Used for dev environment
     project.logger.lifecycle('!!!!!!!!!!!!!!!!!!!dev')
@@ -35,9 +36,8 @@ if (project.hasProperty('dev')) {
     propertyDrivenProfiles = 'default'
 }
 
-def propertyDrivenProfiles;
 bootWar {
-    project.logger.lifecycle('botwar!!!!!!!!!!!!!!')
+    project.logger.lifecycle('botwar!!!!!!!!!!!!!! + propertyDrivenProfiles')
     propertyDrivenProfiles
    /* systemProperties = [
             'spring.profiles.active': propertyDrivenProfiles
