@@ -34,9 +34,12 @@ if (project.hasProperty('dev')) {
 }
 
 task setSpringProfile() {
-    ant.propertyfile(file: "./build/resources/main/application.properties") {
-        entry(key: "spring.profiles.active", value: "dev")
+    doFirst {
+        ant.propertyfile(file: "./build/resources/main/application.properties") {
+            entry(key: "spring.profiles.active", value: "dev")
+        }
     }
+
 }
 
 bootWar {
