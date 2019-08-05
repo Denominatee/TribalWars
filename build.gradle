@@ -23,7 +23,7 @@ dependencies {
 }
 
 def propertyDrivenProfiles;
-bootRun {
+bootWar {
     systemProperties = [
             'spring.profiles.active': propertyDrivenProfiles
     ]
