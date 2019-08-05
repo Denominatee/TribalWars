@@ -22,7 +22,16 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.14.0'
 }
 
-task setProperties {
-    println "Target environment: $env"
-    systemProperty "spring.profiles.active", $env
+def propertyDrivenProfiles;
+bootRun {
+    systemProperties = [
+            'spring.profiles.active': propertyDrivenProfiles
+    ]
+}
+
+if (project.hasProperty('dev')) {
+    // Used for dev environment
+    propertyDrivenProfiles = 'dev'
+} else {
+    propertyDrivenProfiles = 'default'
 }
