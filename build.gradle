@@ -39,7 +39,6 @@ task setSpringProfile() {
             entry(key: "spring.profiles.active", value: propertyDrivenProfiles)
         }
     }
-
 }
 
 bootWar {

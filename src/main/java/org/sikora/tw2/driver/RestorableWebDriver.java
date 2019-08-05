@@ -18,7 +18,7 @@ public class RestorableWebDriver extends RemoteWebDriver {
 
     public static RemoteWebDriver createDriver() {
         ProfilesIni ini = new ProfilesIni();
-        FirefoxProfile profile = ini.getProfile("test");
+        FirefoxProfile profile = ini.getProfile("default");
         profile.setPreference("media.volume_scale", "0.0");
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         firefoxOptions.setProfile(profile);
