@@ -37,6 +37,7 @@ public class ControllerRest {
 
     @PostMapping("/connect")
     public void connect(SessionForm form) {
+        LOG.info("Connectiong to sessions");
         String id = form.getId();
         URL url = null;
         try {
