@@ -10,7 +10,7 @@ document.getElementById("login").addEventListener("click", login);
 function login() {
 	$.ajax({
 		type : "POST",
-		url : 'http://localhost:8080/login'
+		url : 'http://192.168.56.102:8080/login'
 	}).done(function() {
 	});
 }
