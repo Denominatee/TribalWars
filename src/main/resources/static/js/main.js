@@ -2,7 +2,7 @@ document.getElementById("create").addEventListener("click", create);
 function create() {
 	$.ajax({
 		type : "POST",
-		url : 'http://localhost:8080/create'
+		url : 'http://192.168.56.102:8080/create'
 	}).done(function() {
 	});
 }
