@@ -1,5 +1,7 @@
 package org.sikora.tw2.rest;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.grid.common.exception.CapabilityNotPresentOnTheGridException;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.sikora.tw2.driver.CustomWebDriver;
@@ -10,8 +12,6 @@ import org.sikora.tw2.flows.StartFlow;
 import org.sikora.tw2.rest.dto.SessionForm;
 import org.sikora.tw2.services.coord.CoordService;
 import org.sikora.tw2.services.village.VillageService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +23,8 @@ import java.net.URL;
 public class ControllerRest {
 
     private CustomWebDriver driver;
-    private static final Logger LOG = LoggerFactory.getLogger(ControllerRest.class);
+
+    private  static final Logger LOG = LogManager.getLogger();
     @Autowired
     VillageService villageService;
     @Autowired
